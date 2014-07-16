@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		79154A731976D07A00333709 /* GZCusomCellLayoutEventList.m in Sources */ = {isa = PBXBuildFile; fileRef = 79154A721976D07A00333709 /* GZCusomCellLayoutEventList.m */; };
 		79160A9818028C9100E18CD1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79160A9718028C9100E18CD1 /* Foundation.framework */; };
 		79160A9A18028C9100E18CD1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79160A9918028C9100E18CD1 /* CoreGraphics.framework */; };
 		79160A9C18028C9100E18CD1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79160A9B18028C9100E18CD1 /* UIKit.framework */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		79154A711976D07A00333709 /* GZCusomCellLayoutEventList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GZCusomCellLayoutEventList.h; sourceTree = "<group>"; };
+		79154A721976D07A00333709 /* GZCusomCellLayoutEventList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GZCusomCellLayoutEventList.m; sourceTree = "<group>"; };
 		79160A9418028C9100E18CD1 /* GZMonthCalendarView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GZMonthCalendarView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79160A9718028C9100E18CD1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		79160A9918028C9100E18CD1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -124,6 +127,7 @@
 		79160A9D18028C9100E18CD1 /* GZMonthCalendarView */ = {
 			isa = PBXGroup;
 			children = (
+				79DF73241976DF3700E7CF6A /* CustomCellStyle */,
 				79160AA618028C9100E18CD1 /* GZAppDelegate.h */,
 				79160AA718028C9100E18CD1 /* GZAppDelegate.m */,
 				79160AA918028C9100E18CD1 /* Main.storyboard */,
@@ -162,6 +166,15 @@
 				79160ABF18028C9100E18CD1 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		79DF73241976DF3700E7CF6A /* CustomCellStyle */ = {
+			isa = PBXGroup;
+			children = (
+				79154A711976D07A00333709 /* GZCusomCellLayoutEventList.h */,
+				79154A721976D07A00333709 /* GZCusomCellLayoutEventList.m */,
+			);
+			name = CustomCellStyle;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,6 +278,7 @@
 				79160AA418028C9100E18CD1 /* main.m in Sources */,
 				79160AAE18028C9100E18CD1 /* GZViewController.m in Sources */,
 				79160AA818028C9100E18CD1 /* GZAppDelegate.m in Sources */,
+				79154A731976D07A00333709 /* GZCusomCellLayoutEventList.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

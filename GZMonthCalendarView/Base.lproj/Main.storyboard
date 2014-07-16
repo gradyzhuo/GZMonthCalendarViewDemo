@@ -17,76 +17,100 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6gz-WA-Jbc" customClass="GZMonthCalendrView">
-                                <rect key="frame" x="0.0" y="40" width="320" height="488"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="0.9215686917" green="0.90980398650000005" blue="0.89019614459999996" alpha="1" colorSpace="deviceRGB"/>
+                            <segmentedControl appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="P0T-DM-3uO">
+                                <rect key="frame" x="47" y="46" width="226" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="226" id="3u9-ED-rXl"/>
+                                    <constraint firstAttribute="height" constant="28" id="PbE-8d-Ntz"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Cell Style 1"/>
+                                    <segment title="Cell Style 2"/>
+                                </segments>
                                 <connections>
-                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="txQ-fF-89V"/>
-                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="arn-1b-3DP"/>
+                                    <action selector="styleSegmentChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="OEe-SG-T3T"/>
                                 </connections>
-                            </scrollView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uIS-3e-nzu" customClass="GZCalendarWeekDayBar">
-                                <rect key="frame" x="0.0" y="20" width="320" height="20"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="0.9215686917" green="0.90980398650000005" blue="0.89019614459999996" alpha="1" colorSpace="deviceRGB"/>
+                            </segmentedControl>
+                            <view appearanceType="aqua" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oCM-1a-QDj">
+                                <rect key="frame" x="0.0" y="82" width="320" height="338"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uIS-3e-nzu" customClass="GZCalendarWeekDayBar">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" red="0.9215686917" green="0.90980398650000005" blue="0.89019614459999996" alpha="1" colorSpace="deviceRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="5Xc-iw-rro"/>
+                                            <constraint firstAttribute="width" constant="320" id="c0w-9Y-u6N"/>
+                                        </constraints>
+                                    </view>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6gz-WA-Jbc" customClass="GZMonthCalendrView">
+                                        <rect key="frame" x="0.0" y="20" width="320" height="318"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" red="0.9215686917" green="0.90980398650000005" blue="0.89019614459999996" alpha="1" colorSpace="deviceRGB"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="vXZ-lx-hvc" id="txQ-fF-89V"/>
+                                            <outlet property="delegate" destination="vXZ-lx-hvc" id="arn-1b-3DP"/>
+                                        </connections>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="uIS-3e-nzu" firstAttribute="top" secondItem="oCM-1a-QDj" secondAttribute="top" id="2zO-kt-Ea0"/>
+                                    <constraint firstItem="6gz-WA-Jbc" firstAttribute="leading" secondItem="oCM-1a-QDj" secondAttribute="leading" id="4Ez-4G-xk2"/>
+                                    <constraint firstItem="uIS-3e-nzu" firstAttribute="leading" secondItem="oCM-1a-QDj" secondAttribute="leading" id="5x4-nC-ftY"/>
+                                    <constraint firstAttribute="trailing" secondItem="6gz-WA-Jbc" secondAttribute="trailing" id="62F-Lz-k5c"/>
+                                    <constraint firstAttribute="bottom" secondItem="6gz-WA-Jbc" secondAttribute="bottom" id="Pe7-6E-bMR"/>
+                                    <constraint firstItem="6gz-WA-Jbc" firstAttribute="top" secondItem="uIS-3e-nzu" secondAttribute="bottom" id="S6e-zT-uHc"/>
+                                    <constraint firstItem="6gz-WA-Jbc" firstAttribute="top" secondItem="uIS-3e-nzu" secondAttribute="bottom" id="Zi7-Lz-A7q"/>
+                                    <constraint firstAttribute="trailing" secondItem="uIS-3e-nzu" secondAttribute="trailing" id="umK-cP-SXr"/>
+                                </constraints>
+                            </view>
+                            <view appearanceType="aqua" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ePT-ts-tdG">
+                                <rect key="frame" x="0.0" y="423" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label appearanceType="aqua" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x22-Bd-KuF">
+                                        <rect key="frame" x="20" y="11" width="280" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.69417721033096313" green="0.64836496114730835" blue="0.54778450727462769" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="bMW-d8-NsT"/>
+                                    <constraint firstAttribute="width" constant="320" id="pzq-70-L9p"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ePT-ts-tdG" secondAttribute="trailing" id="5AK-Mt-NEx"/>
+                            <constraint firstItem="P0T-DM-3uO" firstAttribute="top" secondItem="7i7-Qa-ga9" secondAttribute="bottom" constant="26" id="EQG-sJ-PCQ"/>
+                            <constraint firstItem="P0T-DM-3uO" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="47" id="Jya-7a-Q0b"/>
+                            <constraint firstAttribute="trailing" secondItem="P0T-DM-3uO" secondAttribute="trailing" constant="47" id="OgN-BC-LFr"/>
+                            <constraint firstItem="ePT-ts-tdG" firstAttribute="top" secondItem="oCM-1a-QDj" secondAttribute="bottom" constant="3" id="P2r-Uj-hXq"/>
+                            <constraint firstItem="ePT-ts-tdG" firstAttribute="top" secondItem="oCM-1a-QDj" secondAttribute="bottom" constant="3" id="QaU-xt-j0A"/>
+                            <constraint firstItem="oCM-1a-QDj" firstAttribute="top" secondItem="P0T-DM-3uO" secondAttribute="bottom" constant="8" id="Yjo-XX-auw"/>
+                            <constraint firstItem="oCM-1a-QDj" firstAttribute="top" secondItem="P0T-DM-3uO" secondAttribute="bottom" constant="8" id="eWg-Vi-WeN"/>
+                            <constraint firstItem="oCM-1a-QDj" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="hzw-W2-wWz"/>
+                            <constraint firstAttribute="trailing" secondItem="oCM-1a-QDj" secondAttribute="trailing" id="moF-Ly-btM"/>
+                            <constraint firstItem="ePT-ts-tdG" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="vDC-fl-8aJ"/>
+                            <constraint firstItem="O3H-B7-XcD" firstAttribute="top" secondItem="ePT-ts-tdG" secondAttribute="bottom" priority="250" constant="101" id="vXT-cC-FSr"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="scrollView" destination="6gz-WA-Jbc" id="YNi-0l-UAi"/>
+                        <outlet property="monthCalendarView" destination="6gz-WA-Jbc" id="Dmh-ZL-ygW"/>
+                        <outlet property="selectedShownLabel" destination="x22-Bd-KuF" id="D0J-Fq-avJ"/>
+                        <outlet property="styleSegment" destination="P0T-DM-3uO" id="MyR-rn-2q0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="79" y="-78"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Dlz-Pg-qtH">
-            <objects>
-                <viewController id="uBV-ti-TGz" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ZVv-Of-kw9"/>
-                        <viewControllerLayoutGuide type="bottom" id="x6s-uD-0uy"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="OHq-F6-Ve5">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0L9-Rj-1bD">
-                                <rect key="frame" x="0.0" y="48" width="320" height="520"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="0.80000001192092896" green="1" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="520" id="dUT-nN-2uj"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ksm-1K-mbO">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="0.40000000596046448" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="1Fa-5Y-Hqg"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="ksm-1K-mbO" secondAttribute="trailing" id="6l3-aQ-DTA"/>
-                            <constraint firstItem="0L9-Rj-1bD" firstAttribute="top" secondItem="OHq-F6-Ve5" secondAttribute="top" constant="48" id="7kM-hK-THx"/>
-                            <constraint firstItem="0L9-Rj-1bD" firstAttribute="leading" secondItem="OHq-F6-Ve5" secondAttribute="leading" id="DTx-jW-iIc"/>
-                            <constraint firstAttribute="bottom" secondItem="0L9-Rj-1bD" secondAttribute="bottom" id="VVa-xz-CQ0"/>
-                            <constraint firstItem="0L9-Rj-1bD" firstAttribute="trailing" secondItem="ksm-1K-mbO" secondAttribute="trailing" id="epV-bf-Ebi"/>
-                            <constraint firstItem="ksm-1K-mbO" firstAttribute="top" secondItem="OHq-F6-Ve5" secondAttribute="top" id="hm5-ve-xbY"/>
-                            <constraint firstItem="ksm-1K-mbO" firstAttribute="leading" secondItem="0L9-Rj-1bD" secondAttribute="leading" id="m0y-nP-UL1"/>
-                            <constraint firstItem="0L9-Rj-1bD" firstAttribute="top" secondItem="ksm-1K-mbO" secondAttribute="bottom" id="vIe-RT-fOE"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HCd-vH-kTv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="620" y="-78"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

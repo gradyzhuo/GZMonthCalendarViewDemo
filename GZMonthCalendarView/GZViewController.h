@@ -11,9 +11,10 @@
 
 @interface GZViewController : UIViewController<GZMonthCalendrViewDelegate>
 
-@property (weak, nonatomic) IBOutlet GZMonthCalendrView *scrollView;
+@property (weak, nonatomic) IBOutlet GZMonthCalendrView *monthCalendarView;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *styleSegment;
+@property (weak, nonatomic) IBOutlet UILabel *selectedShownLabel;
 
-- (IBAction)change:(id)sender;
-- (IBAction)goTo:(id)sender;
+- (IBAction) styleSegmentChanged:(id)sender;
 
 @end
